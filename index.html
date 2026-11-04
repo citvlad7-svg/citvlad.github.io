@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WEIGO auto parts — автозапчасти с доставкой</title>
+<meta name="description" content="WEIGO auto parts: тормозные колодки, фильтры, свечи, амортизаторы. Соберите заявку в корзине, мы перезвоним.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b6fd6'/%3E%3Ctext x='50' y='66' font-size='52' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EW%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --blue:#0b6fd6; --blue-d:#0a57a8; --sky:#d6eafd; --ink:#12263f; --muted:#5a6b80;
+  --bg:#ffffff; --panel:#f0f4f9; --line:#d5dee9; --onblue:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root{--blue:#3b93f0; --blue-d:#2f7fd6; --sky:#16324f; --ink:#e8eff8; --muted:#9db0c6; --bg:#0d1a2b; --panel:#14243a; --line:#26395366; --onblue:#06182b}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.logo{display:block;width:44px;height:44px}
+nav{display:flex;gap:18px;margin-left:auto}
+nav a{text-decoration:none;font-weight:600;color:var(--muted)}
+nav a:hover{color:var(--blue)}
+.cartbtn{border:0;background:var(--blue);color:var(--onblue);font:inherit;font-weight:700;padding:9px 16px;border-radius:10px;cursor:pointer}
+.cartbtn span{display:inline-block;min-width:1.4em;margin-left:6px;padding:0 6px;border-radius:99px;background:var(--onblue);color:var(--blue);text-align:center;font-size:.85em}
+.hero{padding:72px 0 56px}
+.hero h1{font-size:clamp(2.2rem,6.5vw,4.4rem);line-height:1.02;letter-spacing:-.03em;font-weight:900;margin:0 0 20px;max-width:14ch}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:46ch;margin:0 0 28px}
+.btn{display:inline-block;border:0;background:var(--blue);color:var(--onblue);font:inherit;font-weight:700;padding:14px 24px;border-radius:10px;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--blue-d)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;padding:0;list-style:none;color:var(--muted);font-weight:600}
+.facts li::before{content:"";display:inline-block;width:10px;height:10px;margin-right:8px;background:var(--blue);transform:skewX(-20deg)}
+section{padding:48px 0}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:-.02em;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 24px}
+.list{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:96px 1fr 120px 130px;gap:8px 16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.art{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9rem;color:var(--blue);font-weight:700}
+.name b{display:block}
+.name small{color:var(--muted)}
+.price{font-weight:800;text-align:right;white-space:nowrap}
+.add{border:2px solid var(--blue);background:transparent;color:var(--blue);font:inherit;font-weight:700;padding:8px 12px;border-radius:10px;cursor:pointer}
+.add:hover{background:var(--blue);color:var(--onblue)}
+.btn.ghost{background:transparent;color:var(--blue);border:2px solid var(--blue);padding:12px 22px}
+.btn.ghost:hover{background:var(--blue);color:var(--onblue)}
+.hero .btn{margin:0 10px 10px 0}
+.promos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.promo{border-left:6px solid var(--blue);background:var(--sky);padding:20px 22px;border-radius:0 12px 12px 0}
+.promo h3{margin:0 0 6px;font-size:1.25rem}
+.promo p{margin:0 0 10px}
+.promo time{font-size:.9rem;color:var(--muted);font-weight:600}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{border-top:2px solid var(--ink);padding-top:12px}
+.rev b{display:block}
+.rev small{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:20px 0 0;list-style:none}
+.chips li{border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-weight:600}
+.routes{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+@media (max-width:720px){.promos,.revs{grid-template-columns:1fr}}
+.contacts{background:var(--panel)}
+.cgrid{display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:start}
+.cgrid dl{margin:0}
+.cgrid dt{color:var(--muted);font-size:.9rem;margin-top:16px}
+.cgrid dd{margin:2px 0 0;font-size:1.1rem;font-weight:700}
+.map{width:100%;height:340px;border:0;border-radius:12px;background:var(--line)}
+.note{color:var(--muted);font-size:.85rem;margin-top:10px}
+footer{padding:28px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+dialog{width:min(560px,calc(100% - 24px));max-height:calc(100% - 24px);padding:0;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink)}
+dialog::backdrop{background:rgba(8,20,36,.55)}
+.dhead{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line)}
+.dhead h3{margin:0;font-size:1.25rem}
+.x{border:0;background:none;color:var(--muted);font-size:1.6rem;line-height:1;cursor:pointer;padding:4px 8px}
+.dbody{padding:8px 20px 20px}
+.item{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.item small{display:block;color:var(--muted)}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:30px;height:30px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;font-size:1.1rem;cursor:pointer}
+.total{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:800;padding:14px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink)}
+.err{color:#d23b3b;font-size:.9rem;min-height:1.2em;margin:6px 0 0}
+.empty,.done{padding:28px 0;text-align:center;color:var(--muted)}
+.done b{display:block;color:var(--ink);font-size:1.2rem;margin-bottom:6px}
+.hidden{display:none!important}
+@media (max-width:720px){
+  nav{display:none}
+  .cartbtn{margin-left:auto}
+  .hero{padding:44px 0 32px}
+  .row{grid-template-columns:1fr auto;grid-template-areas:"art art" "name name" "price add"}
+  .row .art{grid-area:art}.row .name{grid-area:name}.row .price{grid-area:price;text-align:left}.row .add{grid-area:add}
+  .cgrid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" aria-label="WEIGO auto parts, наверх">
+      <svg class="logo" viewBox="0 0 120 120" role="img" aria-label="WEIGO auto parts">
+        <rect width="120" height="120" rx="22" fill="#0b6fd6"/>
+        <polygon points="24,60 30,34 46,26 40,56" fill="#8cc4f5"/>
+        <polygon points="50,60 56,34 72,40 80,30 96,24 88,52" fill="#8cc4f5"/>
+        <text x="60" y="86" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="25" text-anchor="middle" fill="#fff">WEIGO</text>
+        <text x="60" y="102" font-family="Arial,Helvetica,sans-serif" font-size="11" text-anchor="middle" fill="#cfe6ff">auto parts</text>
+      </svg>
+    </a>
+    <nav>
+      <a href="#promos">Акции</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <button class="cartbtn" id="openCart" type="button">Корзина<span id="count">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Запчасти, которые подходят с первого раза</h1>
+    <p>Тормоза, фильтры, свечи и подвеска для легковых авто. Добавьте нужное в корзину и оставьте заявку: менеджер перезвонит и уточнит совместимость по VIN.</p>
+    <a class="btn" href="#catalog">Выбрать запчасти</a>
+    <a class="btn ghost" href="tel:+79001234567">Позвонить</a>
+    <a class="btn ghost" href="#route">Как доехать</a>
+    <ul class="facts">
+      <li>Подбор по VIN</li>
+      <li>Доставка по городу за день</li>
+      <li>Гарантия на все детали</li>
+    </ul>
+  </div>
+
+  <section id="promos">
+    <div class="wrap">
+      <h2>Акции</h2>
+      <p class="sub">Тестовые акции, замените на свои.</p>
+      <div class="promos">
+        <div class="promo"><h3>Установка колодок бесплатно</h3><p>При покупке тормозных колодок поставим их на ваш автомобиль без доплаты.</p><time>с 01.11.2026 по 31.12.2026</time></div>
+        <div class="promo"><h3>−15% на фильтры</h3><p>Масляные, воздушные и салонные фильтры по сниженным ценам, пока есть в наличии.</p><time>с 01.11.2026 по 30.11.2026</time></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog">
+    <div class="wrap">
+      <h2>Каталог</h2>
+      <p class="sub">Тестовые позиции и цены.</p>
+      <div class="list" id="list"></div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <h2>Отзывы</h2>
+      <p class="sub">Примерные тексты для теста, настоящие отзывы подставьте позже.</p>
+      <div class="revs">
+        <div class="rev"><b>Алексей</b><small>Пример отзыва</small><p>Подобрали колодки по VIN, всё подошло с первого раза. Быстро и вежливо.</p></div>
+        <div class="rev"><b>Марина</b><small>Пример отзыва</small><p>Заказала фильтры и свечи, забрала в тот же день. Цены честные.</p></div>
+        <div class="rev"><b>Игорь</b><small>Пример отзыва</small><p>Помогли выбрать амортизаторы и сразу установили. Рекомендую.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="contacts">
+    <div class="wrap">
+      <h2>О нас</h2>
+      <p class="sub" style="max-width:60ch">WEIGO auto parts подбирает и продаёт автозапчасти для легковых авто. Поможем найти нужную деталь, а по желанию установим её на месте. Работаем с частными и юридическими лицами.</p>
+      <ul class="chips">
+        <li>Предварительная запись</li><li>Самовывоз</li><li>Оплата картой</li><li>Парковка</li><li>Доставка</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contacts" class="contacts">
+    <div class="wrap cgrid">
+      <div>
+        <h2>Контакты</h2>
+        <dl>
+          <dt>Телефон</dt><dd><a href="tel:+79001234567">+7 (900) 123-45-67</a></dd>
+          <dt>Почта</dt><dd><a href="mailto:info@weigo.example">info@weigo.example</a></dd>
+          <dt>Адрес склада и пункта выдачи</dt><dd>Москва, ул. Тверская, д. 1</dd>
+          <dt>Часы работы</dt><dd>Пн–Сб, 9:00–20:00</dd>
+        </dl>
+        <p class="note">Адрес и контакты тестовые, замените их на настоящие.</p>
+        <div class="routes" id="route">
+          <a class="btn" target="_blank" rel="noopener" href="https://yandex.ru/maps/?mode=routes&amp;rtext=~55.7575%2C37.6137&amp;z=16">Яндекс Карты</a>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://2gis.ru/moscow?m=37.6137%2C55.7575%2F16">2ГИС</a>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=55.7575%2C37.6137">Google Maps</a>
+        </div>
+      </div>
+      <iframe class="map" title="Карта: Москва, ул. Тверская, 1" loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=37.6037%2C55.7525%2C37.6237%2C55.7625&amp;layer=mapnik&amp;marker=55.7575%2C37.6137"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 WEIGO auto parts. Тестовая версия сайта.</div></footer>
+
+<dialog id="cart" aria-labelledby="cartTitle">
+  <div class="dhead"><h3 id="cartTitle">Корзина</h3><button class="x" id="closeCart" type="button" aria-label="Закрыть">×</button></div>
+  <div class="dbody">
+    <div id="empty" class="empty">В корзине пусто. Добавьте запчасти из каталога.</div>
+    <div id="full" class="hidden">
+      <div id="items"></div>
+      <div class="total"><span>Итого</span><span id="sum"></span></div>
+      <form id="form" novalidate>
+        <label for="fn">Имя</label><input id="fn" autocomplete="name">
+        <label for="fp">Телефон</label><input id="fp" type="tel" autocomplete="tel" placeholder="+7 ___ ___-__-__">
+        <label for="fc">Марка, модель, год или VIN</label><textarea id="fc" rows="2"></textarea>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" type="submit" style="width:100%">Отправить заявку</button>
+      </form>
+    </div>
+    <div id="done" class="done hidden"><b>Заявка принята</b><span id="doneText"></span></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var PRODUCTS=[
+    {id:"WG-1021",name:"Тормозные колодки передние",note:"Комплект на ось",price:2450},
+    {id:"WG-2207",name:"Масляный фильтр",note:"Для бензиновых двигателей",price:390},
+    {id:"WG-3318",name:"Воздушный фильтр",note:"Панельный",price:780},
+    {id:"WG-4150",name:"Свечи зажигания",note:"Комплект 4 шт.",price:1680},
+    {id:"WG-5042",name:"Амортизатор передний",note:"Газомасляный, 1 шт.",price:4900},
+    {id:"WG-6110",name:"Щётки стеклоочистителя",note:"Пара, 600/450 мм",price:1150}
+  ];
+  var KEY="weigo_cart", cart={};
+  function money(n){return n.toLocaleString("ru-RU")+" ₽"}
+  function load(){try{var s=localStorage.getItem(KEY);if(s)cart=JSON.parse(s)||{}}catch(e){cart={}}}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}}
+  function $(id){return document.getElementById(id)}
+  function find(id){return PRODUCTS.filter(function(p){return p.id===id})[0]}
+
+  var list=$("list");
+  PRODUCTS.forEach(function(p){
+    var r=document.createElement("div");r.className="row";
+    r.innerHTML='<div class="art">'+p.id+'</div><div class="name"><b>'+p.name+'</b><small>'+p.note+'</small></div><div class="price">'+money(p.price)+'</div><button class="add" type="button" data-id="'+p.id+'">В корзину</button>';
+    list.appendChild(r);
+  });
+  list.addEventListener("click",function(e){
+    var b=e.target.closest(".add");if(!b)return;
+    var id=b.getAttribute("data-id");cart[id]=(cart[id]||0)+1;save();render();
+    b.textContent="Добавлено";setTimeout(function(){b.textContent="В корзину"},900);
+  });
+
+  function render(){
+    var ids=Object.keys(cart).filter(function(k){return cart[k]>0&&find(k)});
+    var n=0,sum=0,html="";
+    ids.forEach(function(k){
+      var p=find(k),q=cart[k];n+=q;sum+=p.price*q;
+      html+='<div class="item"><div>'+p.name+'<small>'+p.id+' · '+money(p.price)+'</small></div>'+
+        '<div class="qty"><button type="button" data-d="-1" data-id="'+k+'" aria-label="Меньше">−</button><span>'+q+'</span><button type="button" data-d="1" data-id="'+k+'" aria-label="Больше">+</button></div>'+
+        '<b>'+money(p.price*q)+'</b></div>';
+    });
+    $("count").textContent=n;
+    $("items").innerHTML=html;$("sum").textContent=money(sum);
+    var has=ids.length>0;
+    $("empty").classList.toggle("hidden",has||!$("done").classList.contains("hidden"));
+    $("full").classList.toggle("hidden",!has);
+  }
+  $("items").addEventListener("click",function(e){
+    var b=e.target.closest("button[data-d]");if(!b)return;
+    var id=b.getAttribute("data-id");cart[id]=Math.max(0,(cart[id]||0)+Number(b.getAttribute("data-d")));
+    if(!cart[id])delete cart[id];save();render();
+  });
+
+  var dlg=$("cart");
+  function open(){$("done").classList.add("hidden");$("err").textContent="";render();if(dlg.showModal)dlg.showModal();else dlg.setAttribute("open","")}
+  $("openCart").addEventListener("click",open);
+  $("closeCart").addEventListener("click",function(){dlg.close()});
+  dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+
+  $("form").addEventListener("submit",function(e){
+    e.preventDefault();
+    var name=$("fn").value.trim(),phone=$("fp").value.replace(/\D/g,"");
+    if(!name){$("err").textContent="Укажите имя.";$("fn").focus();return}
+    if(phone.length<10){$("err").textContent="Укажите телефон, чтобы мы могли перезвонить.";$("fp").focus();return}
+    var num="WG-"+Math.floor(10000+Math.random()*90000);
+    cart={};save();render();
+    $("full").classList.add("hidden");$("empty").classList.add("hidden");
+    $("doneText").textContent="Номер заявки "+num+". Менеджер перезвонит, "+name+". Это тестовая версия: заявка никуда не отправляется.";
+    $("done").classList.remove("hidden");$("form").reset();
+  });
+
+  load();render();
+})();
+</script>
+</body>
+</html>
