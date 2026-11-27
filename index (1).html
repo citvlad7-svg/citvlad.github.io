@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f4fa0">
+<title>WEIGOS — багажные системы и автобоксы в Сочи</title>
+<meta name="description" content="WEIGOS: магазин багажных систем в Сочи. Более 50 автобоксов LUX, PT Group, Broomer. Подбор на любой автомобиль. Звоните +7 993 767 43 01.">
+<meta property="og:title" content="WEIGOS — багажные системы в Сочи">
+<meta property="og:description" content="Автобоксы и поперечины на любой автомобиль. Официальный представитель LUX в Сочи.">
+<meta property="og:image" content="img/logo.png">
+<link rel="icon" href="img/logo.png" type="image/png">
+<style>
+:root{--blue:#1f56b0;--blue-d:#173f85;--navy:#0f1f3a;--ink:#14233b;--muted:#5a6a80;--bg:#f3f6fb;--card:#fff;--line:#dae2ee;--accent:#ffb400;--wa:#1fa855;--tg:#229ed9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(1.6rem,4.5vw,2.3rem);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:62ch}
+section{padding:52px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border:0;border-radius:12px;background:var(--blue);color:#fff;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--blue-d)}
+.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+.btn.line{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+.btn.line:hover{background:var(--blue);color:#fff}
+.btn.wa{background:var(--wa)}.btn.tg{background:var(--tg)}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:14px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.2rem;letter-spacing:.02em}
+.brand img{width:42px;height:42px;border-radius:10px;object-fit:cover}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:.7rem;line-height:1;letter-spacing:0;margin-top:2px}
+nav{display:flex;gap:2px;margin-left:auto}
+nav a{position:relative;padding:8px 10px;border-radius:9px;text-decoration:none;font-weight:600;color:var(--muted);transition:color .2s}
+nav a::after{content:"";position:absolute;left:10px;right:10px;bottom:3px;height:2px;border-radius:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover,nav a.on{color:var(--blue)}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+.hright .btn{min-height:42px;padding:0 16px;font-size:.95rem}
+.burger{display:none;width:44px;height:44px;border:0;background:var(--bg);border-radius:10px;cursor:pointer;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:2.5px;border-radius:2px;background:var(--ink);transition:transform .25s,opacity .2s,top .25s}
+.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:21px}.burger i:nth-child(3){top:28px}
+.burger[aria-expanded="true"] i:nth-child(1){top:21px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] i:nth-child(3){top:21px;transform:rotate(-45deg)}
+.hero{background:linear-gradient(135deg,#2f7bc4 0%,#1f4fa0 55%,#1b3a86 100%);color:#fff;padding:56px 0 48px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.hero h1{font-size:clamp(1.9rem,5.4vw,3.2rem);font-weight:900;margin-bottom:16px}
+.hero p.lead{font-size:1.1rem;opacity:.95;max-width:50ch;margin:0 0 22px}
+.info{display:grid;gap:10px;margin:0 0 26px;padding:0;list-style:none}
+.info li{display:flex;gap:10px;align-items:baseline}
+.info b{min-width:124px;opacity:.75;font-weight:600}
+.hero .acts{display:flex;flex-wrap:wrap;gap:10px}
+.hero img{width:100%;border-radius:22px;box-shadow:0 22px 44px rgba(0,0,0,.35)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;font-weight:600}
+.facts li::before{content:"";display:inline-block;width:9px;height:9px;margin-right:8px;background:var(--accent);transform:skewX(-20deg)}
+.promos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.promo{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:14px;padding:22px}
+.promo h3{font-size:1.3rem;margin-bottom:8px}.promo p{margin:0 0 10px}
+.promo time{color:var(--muted);font-weight:600;font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:20px 0 0;list-style:none}
+.chips li{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-weight:600}
+.about p{margin:0 0 14px;max-width:70ch;font-size:1.08rem}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.filters button{min-height:42px;padding:0 16px;border:1px solid var(--line);background:var(--card);border-radius:99px;font:inherit;font-weight:600;color:var(--ink);cursor:pointer}
+.filters button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.fbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 14px}
+.fbar select{font:inherit;font-size:16px;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);max-width:100%}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.found{margin-left:auto;color:var(--muted);font-weight:600}
+.fbtn{display:none}
+.badge{display:inline-block;min-width:1.5em;padding:0 6px;border-radius:99px;background:var(--blue);color:#fff;font-size:.8em;text-align:center}
+.fbtn:hover .badge{background:#fff;color:var(--blue)}
+.fpanel{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 24px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:0 0 16px}
+.fg.wide{grid-column:1/-1}
+.fl{font-weight:700;font-size:.85rem;color:var(--muted);margin-bottom:8px}
+.chipsel{display:flex;flex-wrap:wrap;gap:8px}
+.chipsel button{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--line);background:var(--bg);border-radius:99px;font:inherit;font-weight:600;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.chipsel button:hover{border-color:var(--blue)}
+.chipsel button:active{transform:scale(.95)}
+.chipsel button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.3);display:inline-block}
+.pair{display:flex;gap:8px}
+.pair input{width:100%;min-width:0;min-height:44px;padding:0 12px;font:inherit;font-size:16px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.fact{display:flex;align-items:flex-end}
+.fact .btn{width:100%}
+.phc{width:108px}
+td.ph{padding:10px 6px 10px 16px;width:108px}
+td.ph img{width:84px;height:56px;object-fit:contain;background:#fff;border-radius:8px;border:1px solid var(--line)}
+tbody tr.none{cursor:default}tbody tr.none:hover{background:none}
+tbody tr.none td{padding:26px 16px;text-align:center;color:var(--muted)}
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:.85rem;color:var(--muted);font-weight:700;padding:14px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+td{padding:15px 16px;border-bottom:1px solid var(--line)}
+tbody tr{cursor:pointer}
+tbody tr:hover,tbody tr:focus-visible{background:#eef4fd}
+tbody tr:last-child td{border-bottom:0}
+.thb{font:inherit;font-weight:800;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+.thb:hover{color:var(--blue)}
+td.price,th.price{text-align:right;white-space:nowrap;font-weight:800}
+td.model{font-weight:700}
+.note{color:var(--muted);font-size:.85rem;margin-top:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card .ava{width:52px;height:52px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.25rem;margin-bottom:12px}
+.card b{display:block;margin-bottom:4px}.card p{margin:6px 0 0;color:var(--muted)}
+.car{position:relative}
+.gal{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.gal::-webkit-scrollbar{display:none}
+.cbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:48px;height:48px;border:0;border-radius:50%;background:#fff;color:var(--ink);font-size:1.8rem;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(15,31,58,.25);transition:opacity .2s,transform .15s}
+.cbtn:hover{transform:translateY(-50%) scale(1.06)}
+.cbtn.prev{left:-14px}.cbtn.next{right:-14px}
+.cbtn[disabled]{opacity:0;pointer-events:none}
+.gal button{flex:0 0 calc((100% - 24px)/3);scroll-snap-align:start;padding:0;border:0;border-radius:14px;overflow:hidden;background:var(--line);cursor:zoom-in;aspect-ratio:4/3}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .25s}
+.gal button:hover img{transform:scale(1.04)}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 18px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700;padding:14px 0;min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;color:var(--blue);font-weight:500}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:0 0 16px;color:var(--muted)}
+.cgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.cgrid dl{margin:0}.cgrid dt{color:var(--muted);font-size:.9rem;margin-top:14px}
+.cgrid dd{margin:2px 0 0;font-size:1.1rem;font-weight:700}
+.msgs,.routes{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.map{width:100%;height:380px;border:0;border-radius:16px;background:var(--line)}
+footer{background:var(--navy);color:#b8c5d8;padding:30px 0 40px;font-size:.92rem}
+footer a{color:#fff}footer p{margin:0 0 6px}
+.bar{display:none}
+dialog{width:min(520px,calc(100% - 24px));max-height:calc(100% - 24px);padding:0;border:0;border-radius:16px;background:#fff;color:var(--ink)}
+dialog::backdrop{background:rgba(8,20,36,.6)}
+.x{position:absolute;right:8px;top:8px;width:44px;height:44px;border:0;background:rgba(255,255,255,.9);color:var(--ink);font-size:1.6rem;border-radius:50%;cursor:pointer;z-index:2}
+.pic{aspect-ratio:16/10;background:linear-gradient(135deg,#dfe8f5,#c9d8ee);display:grid;place-items:center;color:#7b8ca6;font-size:.9rem}
+.pic svg{width:56%;height:auto}
+.pic.has{background:#fff}
+.pbody{padding:20px 22px 24px}
+.pbody h3{font-size:1.4rem;margin-bottom:6px}
+.pbody .pp{font-size:1.5rem;font-weight:900;color:var(--blue);margin:8px 0 12px}
+.specs{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:12px 0;padding:0;font-size:.95rem}
+.specs dt{color:var(--muted)}.specs dd{margin:0;font-weight:600}
+.pact{display:grid;gap:10px;margin-top:16px}
+#lb{width:min(94vw,640px);background:transparent}
+#lb img{width:100%;border-radius:14px}
+#lb .x{background:rgba(0,0,0,.5);color:#fff}
+.hidden{display:none!important}
+@media (max-width:860px){
+  nav{display:flex;position:absolute;left:0;right:0;top:64px;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:8px 14px 14px;margin:0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px);transition:opacity .22s,transform .22s,visibility .22s}
+  nav.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  nav a{padding:14px 10px;font-size:1.05rem}nav a::after{display:none}nav a:hover,nav a.on{background:var(--bg)}
+  nav.open a{animation:navIn .3s both}nav.open a:nth-child(2){animation-delay:.04s}nav.open a:nth-child(3){animation-delay:.08s}nav.open a:nth-child(4){animation-delay:.12s}nav.open a:nth-child(5){animation-delay:.16s}nav.open a:nth-child(6){animation-delay:.2s}
+  .burger{display:block;margin-left:auto}.hright{display:none}
+  .hero{padding:22px 0 34px}.hero .wrap{grid-template-columns:1fr}
+  .hero img{width:100%;order:-1;margin:0 0 6px;border-radius:16px}
+  .info b{min-width:104px}
+  section{padding:38px 0}
+  .promos,.cgrid,.cards{grid-template-columns:1fr}
+  thead{display:none}table,tbody{display:block}
+  tbody tr{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px 12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+  td:nth-child(3){grid-column:2/4}
+  td:nth-child(7){grid-column:1/3}
+  td.ph{grid-column:1/-1;padding:0;width:auto}td.ph::before{display:none}td.ph:empty{display:none}
+  td.ph img{width:100%;height:140px}
+  td{padding:0;border:0;font-size:.95rem}
+  td::before{content:attr(data-label);display:block;color:var(--muted);font-size:.72rem;font-weight:600}
+  td.price{text-align:left;font-size:1.1rem}
+  .fbtn{display:inline-flex}
+  .fpanel{display:none;grid-template-columns:1fr;padding:16px}
+  .fpanel.open{display:grid;animation:pop .25s ease-out}
+  .found{margin-left:0;width:100%}
+  .fbar select{flex:1}
+  tbody tr.none td{grid-column:1/-1}
+  .gal{gap:10px;margin:0 -20px;padding:0 20px 8px;scroll-padding:0 20px}
+  .gal button{flex:0 0 82%}
+  .cbtn{display:none}
+  .map{height:300px}
+  body{padding-bottom:calc(70px + env(safe-area-inset-bottom,0px))}
+  .bar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:25;background:#fff;border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));gap:6px}
+  .bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:52px;border-radius:12px;font-size:.78rem;font-weight:700;text-decoration:none;color:#fff}
+  .bar .c1{background:var(--blue)}.bar .c2{background:var(--wa)}.bar .c3{background:var(--tg)}.bar .c4{background:var(--navy)}
+  .bar svg{width:22px;height:22px}
+  dialog.sheet{width:100%;max-width:none;max-height:92%;margin-top:auto;border-radius:18px 18px 0 0}
+}
+.btn{transition:background .2s,color .2s,transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(15,31,58,.18)}
+.btn:active{transform:scale(.97)}
+.filters button{transition:background .2s,color .2s,border-color .2s,transform .15s}
+.filters button:hover{border-color:var(--blue)}
+.filters button:active{transform:scale(.95)}
+tbody tr{transition:background .15s;animation:rowIn .35s both}
+tbody tr td:first-child{transition:box-shadow .15s}
+tbody tr:hover td:first-child,tbody tr:focus-visible td:first-child{box-shadow:inset 4px 0 0 var(--blue)}
+.promo,.card{transition:transform .2s,box-shadow .2s}
+.promo:hover,.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(15,31,58,.12)}
+.chips li{transition:transform .2s,border-color .2s,color .2s}
+.chips li:hover{transform:translateY(-2px);border-color:var(--blue);color:var(--blue)}
+dialog[open]{animation:pop .24s ease-out}
+dialog[open]::backdrop{animation:fadeIn .24s ease-out}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+@keyframes rowIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes navIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114693019', 'ym');
+
+    ym(114693019, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<noscript><div><img src="https://mc.yandex.ru/watch/114693019" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="WEIGOS, наверх"><img src="img/logo.png" alt=""><span>WEIGOS<small>багажные системы</small></span></a>
+    <nav id="nav" aria-label="Разделы сайта">
+      <a href="#promos">Акции</a><a href="#about">О нас</a><a href="#catalog">Каталог</a><a href="#works">Наши работы</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
+    </nav>
+    <div class="hright"><a class="btn" href="tel:+79937674301">+7 993 767 43 01</a></div>
+    <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Магазин багажных систем в Сочи</h1>
+      <p class="lead">В наличии более 50 автобоксов LUX, PT Group, Broomer. Подбор багажных систем на любой автомобиль. Официальный представитель LUX в г. Сочи.</p>
+      <ul class="info">
+        <li><b>Режим работы</b><span>Пн–Пт 9:00–17:00, Сб–Вс по предварительной записи</span></li>
+        <li><b>Адрес</b><span>г. Сочи, ул. Параллельная, д. 9а</span></li>
+      </ul>
+      <div class="acts">
+        <a class="btn" style="background:#fff;color:var(--blue)" href="#catalog">Каталог</a>
+        <a class="btn ghost" href="tel:+79937674301">Позвонить</a>
+        <a class="btn ghost" href="#contacts">Контакты</a>
+      </div>
+      <ul class="facts"><li>Подбор по модели авто</li><li>Доставка по Сочи</li><li>Гарантия</li></ul>
+    </div>
+    <img src="img/shop.jpg" alt="Магазин: стеллажи с автобоксами и подсветкой" width="1100" height="825">
+  </div>
+</div>
+
+<section id="promos">
+  <div class="wrap">
+    <h2>Акции</h2>
+    <p class="sub">Действуют на текущий момент.</p>
+    <div class="promos">
+      <div class="promo"><h3>Бесплатная установка багажной системы и автобокса</h3><p>При покупке багажника и бокса на крышу.</p><time>01.06.2026 – 31.12.2026</time></div>
+      <div class="promo"><h3>−10% на автобоксы WBS</h3><p>В акции участвуют чёрные глянцевые автобоксы California и Cross.</p><time>01.11.2026 – 31.12.2026</time></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="padding-top:0">
+  <div class="wrap about">
+    <h2>О нас</h2>
+    <p>Самый большой выбор автобоксов в Сочи. Поможем с подбором поперечин и автобоксов на любой автомобиль. Работаем с физическими и юридическими лицами.</p>
+    <ul class="chips"><li>Предварительная запись</li><li>Самовывоз</li><li>Оплата картой</li><li>Парковка</li><li>Доставка</li></ul>
+  </div>
+</section>
+
+<section id="catalog" style="padding-top:0">
+  <div class="wrap">
+    <h2>Каталог автобоксов</h2>
+    <p class="sub">Нажмите на строку, чтобы посмотреть подробности.</p>
+    <div class="fbar">
+      <button class="btn line fbtn" id="fbtn" type="button" aria-expanded="false" aria-controls="fpanel"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/></svg>Фильтры <span id="fcount" class="badge hidden"></span></button>
+      <label class="sortl"><span class="sr">Сортировка</span><select id="sort" aria-label="Сортировка">
+        <option value="def">Сортировка: по порядку в таблице</option><option value="price-asc">Цена: сначала дешевле</option><option value="price-desc">Цена: сначала дороже</option><option value="volume-desc">Объём: больше</option><option value="volume-asc">Объём: меньше</option><option value="length-desc">Длина: больше</option><option value="length-asc">Длина: меньше</option>
+      </select></label>
+      <span class="found" id="found" aria-live="polite"></span>
+    </div>
+    <div class="fpanel" id="fpanel">
+      <div class="fg wide"><div class="fl">Бренд</div><div class="chipsel" id="f_brand"></div></div>
+      <div class="fg wide"><div class="fl">Цвет</div><div class="chipsel" id="f_color"></div></div>
+      <div class="fg wide"><div class="fl">Покрытие</div><div class="chipsel" id="f_coating"></div></div>
+      <div class="fg"><div class="fl">Длина, см</div><div class="pair"><input id="lmin" type="number" inputmode="numeric" aria-label="Длина от"><input id="lmax" type="number" inputmode="numeric" aria-label="Длина до"></div></div>
+      <div class="fg"><div class="fl">Объём, л</div><div class="pair"><input id="vmin" type="number" inputmode="numeric" aria-label="Объём от"><input id="vmax" type="number" inputmode="numeric" aria-label="Объём до"></div></div>
+      <div class="fg"><div class="fl">Цена, ₽</div><div class="pair"><input id="pmin" type="number" inputmode="numeric" aria-label="Цена от"><input id="pmax" type="number" inputmode="numeric" aria-label="Цена до"></div></div>
+      <div class="fg fact"><button class="btn line" id="freset" type="button">Сбросить</button></div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th class="phc"></th><th>Бренд</th><th>Модель</th><th>Цвет</th><th>Длина</th><th>Объём</th><th>Покрытие</th><th class="price"><button type="button" id="sortp" class="thb">Цена <span id="sarr" aria-hidden="true"></span></button></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div style="text-align:center"><button class="btn line hidden" id="more" type="button" style="margin-top:16px">Показать ещё</button></div>
+    <p class="note">Цены и наличие уточняйте у менеджера.</p>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <h2>Как купить</h2>
+    <p class="sub">Три простых шага.</p>
+    <div class="cards">
+      <div class="card"><div class="ava">1</div><b>Выберите автобокс</b><p>Откройте каталог и нажмите на модель, чтобы увидеть подробности.</p></div>
+      <div class="card"><div class="ava">2</div><b>Свяжитесь с нами</b><p>Позвоните или напишите в Telegram, назовите марку и модель авто.</p></div>
+      <div class="card"><div class="ava">3</div><b>Установим и выдадим</b><p>Подберём поперечины и установим багажную систему на ваш автомобиль.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="works" style="padding-top:0">
+  <div class="wrap">
+    <h2>Наши работы</h2>
+    <p class="sub">Автомобили наших клиентов с установленными автобоксами. Нажмите на фото, чтобы увеличить.</p>
+    <div class="car"><button class="cbtn prev" id="cprev" type="button" aria-label="Назад">‹</button><div class="gal" id="gal"></div><button class="cbtn next" id="cnext" type="button" aria-label="Вперёд">›</button></div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <h2>Частые вопросы</h2>
+    <p class="sub">Ответы на самые частые вопросы.</p>
+    <div class="faq">
+      <details><summary>Как подобрать автобокс и поперечины на мой автомобиль?</summary><p>Назовите марку, модель и год выпуска по телефону или в мессенджере. Подберём поперечины и автобокс под ваш автомобиль.</p></details>
+      <details><summary>Есть ли установка?</summary><p>Да, профессионально установим багажную систему на ваш автомобиль. При покупке багажника и бокса на крышу установка бесплатная, подробности в разделе «Акции».</p></details>
+      <details><summary>Есть ли доставка?</summary><p>Доставляем багажные системы и автобоксы по всему большому Сочи.</p></details>
+      <details><summary>Как можно оплатить?</summary><p>Принимаем оплату наличными, картой, QR-кодом и по расчётному счёту.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" style="background:#fff">
+  <div class="wrap cgrid">
+    <div>
+      <h2>Остались вопросы?</h2>
+      <p class="sub" style="margin-bottom:0">Свяжитесь любым удобным способом.</p>
+      <dl>
+        <dt>Телефон</dt><dd><a href="tel:+79937674301">+7 993 767 43 01</a></dd>
+        <dt>Эл. почта</dt><dd><a href="mailto:weigo@inbox.ru">weigo@inbox.ru</a></dd>
+        <dt>Telegram</dt><dd><a href="https://t.me/weigoru" target="_blank" rel="noopener">@weigoru</a></dd>
+        <dt>Адрес</dt><dd>г. Сочи, ул. Параллельная, д. 9а</dd>
+        <dt>Режим работы</dt><dd>Пн–Пт 9:00–17:00, Сб–Вс по предварительной записи</dd>
+      </dl>
+      <div class="msgs">
+        <a class="btn tg" target="_blank" rel="noopener" href="https://t.me/weigoru">Telegram</a>
+      </div>
+      <div class="routes" id="route">
+        <a class="btn" target="_blank" rel="noopener" href="https://yandex.ru/maps/?mode=routes&amp;rtext=~%D0%A1%D0%BE%D1%87%D0%B8%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%2C%209%D0%B0">Яндекс Карты</a>
+        <a class="btn line" target="_blank" rel="noopener" href="https://2gis.ru/sochi/search/%D0%A1%D0%BE%D1%87%D0%B8%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D0%B0%D1%80%D0%B0%D0%BB%D0%BB%D0%B5%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%2C%209%D0%B0">2ГИС</a>
+      </div>
+    </div>
+    <iframe class="map" title="Карта: г. Сочи, ул. Параллельная, д. 9а" loading="lazy" src="https://yandex.ru/map-widget/v1/?um=constructor%3A71cb8259893748fe57700f7ca84fb52ea3cf418c40a0929c28b1d4b91e8be013&amp;source=constructor"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:#fff">© 2026 WEIGOS</b></p>
+    <p>г. Сочи, ул. Параллельная, д. 9а</p>
+    <p>Режим работы: Пн–Пт 9:00–17:00, Сб–Вс по предварительной записи</p>
+    <p><a href="tel:+79937674301">+7 993 767 43 01</a> · <a href="mailto:weigo@inbox.ru">weigo@inbox.ru</a></p>
+    <p style="margin-top:12px;font-size:.85rem">Цены на сайте не являются публичной офертой. Актуальную стоимость и наличие уточняйте у менеджера.</p>
+  </div>
+</footer>
+
+<div class="bar" aria-label="Быстрые действия">
+  <a class="c1" href="tel:+79937674301"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить</a>
+  <a class="c3" target="_blank" rel="noopener" href="https://t.me/weigoru"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21 4 3 11.2l5 1.8 1.8 5.6 3-3.6 4.6 3.4zM9.8 13.2l7-5.4-5.4 6.4-.4 2.6z"/></svg>Telegram</a>
+  <a class="c4" href="#catalog"><svg viewBox="0 0 24 24" fill="#fff"><path d="M3 5h18v3H3zm0 5.5h18v3H3zM3 16h18v3H3z"/></svg>Каталог</a>
+</div>
+
+<dialog id="pop" class="sheet" aria-labelledby="pt">
+  <button class="x" id="popx" type="button" aria-label="Закрыть">×</button>
+  <div class="pic" id="ppic"><svg viewBox="0 0 200 100" fill="none" stroke="#7b8ca6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 78h160M34 78c0-14 8-24 24-26l20-14h40l22 14c16 2 24 12 24 26"/><rect x="62" y="12" width="76" height="16" rx="8"/><circle cx="62" cy="78" r="12"/><circle cx="144" cy="78" r="12"/></svg></div>
+  <div class="pbody">
+    <h3 id="pt"></h3>
+    <div class="pp" id="pp"></div>
+    <dl class="specs" id="psp"></dl>
+    <p id="pd" style="margin:8px 0 0;color:var(--muted)"></p>
+    <div class="pact">
+      <a class="btn tg" id="ptg" target="_blank" rel="noopener" href="#">Узнать наличие в Telegram</a>
+      <a class="btn line" href="tel:+79937674301">Позвонить</a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="lb"><button class="x" id="lbx" type="button" aria-label="Закрыть">×</button><img id="lbi" alt=""></dialog>
+
+<script src="data/config.js"></script>
+<script src="data/boxes.js"></script>
+<script>
+(function(){
+  var TG="https://t.me/weigoru";
+  var BOXES=window.BOXES||[];
+  BOXES.forEach(function(b,i){if(b.id==null)b.id=i+1});
+  var LK={"а":"a","е":"e","о":"o","р":"p","с":"c","х":"x","у":"y","м":"m","т":"t","к":"k","в":"b","н":"h"};
+  function fold(s){return String(s).toLowerCase().replace(/ё/g,"е").replace(/[аеорсхумтквн]/g,function(c){return LK[c]}).replace(/[^a-zа-я0-9]/g,"")}
+  function parseCSV(t){
+    var rows=[],row=[],f="",q=false;
+    for(var i=0;i<t.length;i++){
+      var c=t.charAt(i);
+      if(q){if(c==='"'){if(t.charAt(i+1)==='"'){f+='"';i++}else q=false}else f+=c}
+      else if(c==='"')q=true;
+      else if(c===","){row.push(f);f=""}
+      else if(c==="\n"||c==="\r"){if(c==="\r"&&t.charAt(i+1)==="\n")i++;row.push(f);f="";rows.push(row);row=[]}
+      else f+=c;
+    }
+    row.push(f);rows.push(row);return rows;
+  }
+  function loadStock(done){
+    var url=window.STOCK_URL;
+    if(!url){done();return}
+    var fin=false;function end(){if(!fin){fin=true;done()}}
+    var to=setTimeout(end,3500);
+    fetch(url,{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(txt){
+      var rows=parseCSV(txt),h=rows[0].map(function(x){return x.trim().toLowerCase()});
+      var ci=h.indexOf("id"),cs=-1,cm=-1;
+      h.forEach(function(x,i){if(cs<0&&x.indexOf("налич")===0)cs=i;if(cm<0&&x.indexOf("модел")===0)cm=i});
+      if(cs>=0&&(ci>=0||cm>=0)){
+        var off={};
+        rows.slice(1).forEach(function(r){
+          var v=(r[cs]||"").trim().toLowerCase();
+          if(v==="нет"||v==="no"||v==="0"||v==="false"||v==="скрыть"||v.indexOf("нет")===0){
+            off[ci>=0?String(r[ci]).trim():fold(r[cm]||"")]=1;
+          }
+        });
+        BOXES=BOXES.filter(function(b){return!off[ci>=0?String(b.id):fold(b.title||(b.brand+" "+b.model))]});
+      }
+      clearTimeout(to);end();
+    }).catch(end);
+  }
+  var WORKS=["img/work01.jpg","img/work02.jpg","img/work03.jpg","img/work04.jpg","img/work05.jpg","img/work06.jpg","img/work07.jpg","img/work08.jpg","img/work09.jpg","img/work10.jpg","img/work11.jpg","img/work12.jpg","img/work13.jpg","img/work14.jpg","img/work15.jpg","img/work16.jpg"];
+  function $(i){return document.getElementById(i)}
+  function money(n){return n.toLocaleString("ru-RU")+" ₽"}
+  var PAGE=8,PH=$("ppic").innerHTML;
+  var S={brand:{},color:{},coating:{},shown:PAGE};
+  var COLORS={"Белый":"#ffffff","Чёрный":"#111111","Серый":"#8a8f98","Серебристый":"#c3c8d0","Красный":"#d33a3a","Синий":"#2a5bd7","Зелёный":"#2e9b57","Коричневый":"#7a4b2a","Бежевый":"#d8c3a0","Титан":"#6b7480"};
+  var RANGES=[["l","length"],["v","volume"],["p","price"]];
+  function uniq(k){var a=[];BOXES.forEach(function(b){if(a.indexOf(b[k])<0)a.push(b[k])});return a.sort(function(x,y){return String(x).localeCompare(String(y),"ru")})}
+  function chipGroup(id,key){
+    var box=$(id);box.innerHTML="";
+    uniq(key).forEach(function(v){
+      var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed","false");
+      b.innerHTML=(key==="color"?'<i class="dot" style="background:'+(COLORS[v]||"#bbb")+'"></i>':"")+v;
+      b.addEventListener("click",function(){
+        var on=!S[key][v];if(on)S[key][v]=1;else delete S[key][v];
+        b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);S.shown=PAGE;apply();
+      });
+      box.appendChild(b);
+    });
+  }
+  function num(id){var v=parseFloat($(id).value);return isNaN(v)?null:v}
+  function buildFilters(){
+    chipGroup("f_brand","brand");chipGroup("f_color","color");chipGroup("f_coating","coating");
+    RANGES.forEach(function(r){
+      var vals=BOXES.map(function(b){return b[r[1]]});
+      if(!vals.length)return;
+      $(r[0]+"min").placeholder="от "+Math.min.apply(null,vals);$(r[0]+"max").placeholder="до "+Math.max.apply(null,vals);
+      ["min","max"].forEach(function(s){$(r[0]+s).addEventListener("input",function(){S.shown=PAGE;apply()})});
+    });
+    $("sort").value="price-asc";
+    $("sortp").addEventListener("click",function(){var s=$("sort");s.value=s.value==="price-asc"?"price-desc":"price-asc";S.shown=PAGE;apply()});
+    $("sort").addEventListener("change",function(){S.shown=PAGE;apply()});
+    $("more").addEventListener("click",function(){S.shown+=PAGE;apply()});
+    $("fbtn").addEventListener("click",function(){var o=$("fpanel").classList.toggle("open");$("fbtn").setAttribute("aria-expanded",o)});
+    $("freset").addEventListener("click",function(){
+      S.brand={};S.color={};S.coating={};S.shown=PAGE;
+      document.querySelectorAll(".chipsel button").forEach(function(b){b.classList.remove("on");b.setAttribute("aria-pressed","false")});
+      RANGES.forEach(function(r){$(r[0]+"min").value="";$(r[0]+"max").value=""});
+      $("sort").value="price-asc";apply();
+    });
+  }
+  function match(b){
+    var ks=["brand","color","coating"];
+    for(var i=0;i<ks.length;i++){var sel=S[ks[i]];if(Object.keys(sel).length&&!sel[b[ks[i]]])return false}
+    for(var j=0;j<RANGES.length;j++){
+      var lo=num(RANGES[j][0]+"min"),hi=num(RANGES[j][0]+"max"),v=b[RANGES[j][1]];
+      if(lo!==null&&v<lo)return false;if(hi!==null&&v>hi)return false;
+    }
+    return true;
+  }
+  function apply(){
+    var list=BOXES.filter(match),s=$("sort").value;
+    if(s!=="def"){var f=s.split("-"),dir=f[1]==="asc"?1:-1;list=list.slice().sort(function(a,b){return(a[f[0]]-b[f[0]])*dir})}
+    var tb=$("rows");tb.innerHTML="";var k=0;
+    list.slice(0,S.shown).forEach(function(b){
+      var tr=document.createElement("tr");tr.tabIndex=0;tr.setAttribute("role","button");
+      tr.setAttribute("aria-label",b.brand+" "+b.model+", подробнее");
+      tr.innerHTML='<td class="ph">'+((b.thumb||b.photo)?'<img src="'+(b.thumb||b.photo)+'" alt="" loading="lazy" width="84" height="63">':'')+'</td><td data-label="Бренд">'+b.brand+'</td><td class="model" data-label="Модель">'+b.model+'</td><td data-label="Цвет">'+b.color+'</td><td data-label="Длина">'+b.length+' см</td><td data-label="Объём">'+b.volume+' л</td><td data-label="Покрытие">'+b.coating+'</td><td class="price" data-label="Цена">'+money(b.price)+'</td>';
+      tr.addEventListener("click",function(){openBox(b)});
+      tr.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();openBox(b)}});
+      tr.style.animationDelay=(k++*35)+"ms";tb.appendChild(tr);
+    });
+    if(!list.length){tb.innerHTML='<tr class="none"><td colspan="8">Ничего не найдено. Измените условия или нажмите «Сбросить».</td></tr>'}
+    $("sarr").textContent=s==="price-asc"?"↑":(s==="price-desc"?"↓":"");
+    $("found").textContent="Найдено: "+list.length+" из "+BOXES.length;
+    $("more").classList.toggle("hidden",list.length<=S.shown);$("more").textContent="Показать ещё (осталось "+Math.max(0,list.length-S.shown)+")";
+    var n=Object.keys(S.brand).length+Object.keys(S.color).length+Object.keys(S.coating).length;
+    RANGES.forEach(function(r){if(num(r[0]+"min")!==null||num(r[0]+"max")!==null)n++});
+    $("fcount").textContent=n;$("fcount").classList.toggle("hidden",!n);
+  }
+  function openBox(b){
+    var name=b.brand+" "+b.model;
+    $("pt").textContent=b.title||name;$("pp").textContent=money(b.price);
+    $("psp").innerHTML='<dt>Цвет</dt><dd>'+b.color+'</dd><dt>Длина</dt><dd>'+b.length+' см</dd><dt>Объём</dt><dd>'+b.volume+' л</dd><dt>Покрытие</dt><dd>'+b.coating+'</dd>'+(b.dims?'<dt>Габариты</dt><dd>'+b.dims+'</dd>':'');
+    $("pd").textContent=b.desc||((b.note?b.note+". ":"")+"Автобокс "+name+": объём "+b.volume+" л, длина "+b.length+" см. Подберём поперечины и установим на ваш автомобиль.");
+    $("ppic").innerHTML=b.photo?'<img src="'+b.photo+'" alt="'+name+'" style="width:100%;height:100%;object-fit:contain">':PH;
+    $("ppic").classList.toggle("has",!!b.photo);
+    var t="Здравствуйте! Интересует автобокс "+name+" ("+b.volume+" л, "+b.length+" см, "+b.color.toLowerCase()+", "+b.coating.toLowerCase()+"), "+money(b.price)+". Есть в наличии?";
+    $("ptg").href=TG+"?text="+encodeURIComponent(t);
+    $("pop").showModal();
+  }
+  $("popx").addEventListener("click",function(){$("pop").close()});
+  $("pop").addEventListener("click",function(e){if(e.target===$("pop"))$("pop").close()});
+
+  var gal=$("gal");
+  WORKS.forEach(function(src,i){
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Открыть фото "+(i+1));
+    b.innerHTML='<img src="'+src+'" alt="Автомобиль с автобоксом на крыше" loading="lazy" width="628" height="468">';
+    b.addEventListener("click",function(){$("lbi").src=src;$("lb").showModal()});
+    gal.appendChild(b);
+  });
+  function slideStep(){var b=gal.querySelector("button");return b?b.getBoundingClientRect().width+12:300}
+  function carState(){$("cprev").disabled=gal.scrollLeft<4;$("cnext").disabled=gal.scrollLeft+gal.clientWidth>=gal.scrollWidth-4}
+  $("cprev").addEventListener("click",function(){gal.scrollBy({left:-slideStep()})});
+  $("cnext").addEventListener("click",function(){gal.scrollBy({left:slideStep()})});
+  gal.addEventListener("scroll",carState);window.addEventListener("resize",carState);carState();
+  $("lbx").addEventListener("click",function(){$("lb").close()});
+  $("lb").addEventListener("click",function(e){if(e.target===$("lb"))$("lb").close()});
+
+  var nav=$("nav"),bg=$("burger");
+  bg.addEventListener("click",function(){var o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)});
+  nav.addEventListener("click",function(e){if(e.target.tagName==="A"){nav.classList.remove("open");bg.setAttribute("aria-expanded","false")}});
+
+  if("IntersectionObserver" in window){
+    var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}})},{threshold:.08});
+    document.querySelectorAll("main section .wrap").forEach(function(w){w.classList.add("rv");rv.observe(w)});
+    var links={};nav.querySelectorAll("a").forEach(function(a){links[a.getAttribute("href").slice(1)]=a});
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting&&links[e.target.id]){Object.keys(links).forEach(function(k){links[k].classList.remove("on")});links[e.target.id].classList.add("on")}
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    Object.keys(links).forEach(function(id){var s=document.getElementById(id);if(s)spy.observe(s)});
+  }
+  if(window.STOCK_URL){$("rows").innerHTML='<tr class="none"><td colspan="8">Загружаем каталог…</td></tr>'}
+  loadStock(function(){buildFilters();apply()});
+})();
+</script>
+</body>
+</html>
